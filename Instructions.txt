@@ -1,0 +1,65 @@
+1. Login to the AWS Academy Learner Lab and Start Lab.
+
+2. Download security credentials, the key pair named labuser in .ppk format and PuTTY through the AWS Details and Readme tabs of the AWS Academy Learner Lab.
+
+3. Download and unzip the Git repository.
+- https://github.com/kevinbayliss/cloudformation-demo
+
+4. Create an EC2 instance through CloudFormation on the AWS console.
+- cloudformation-demo-main\demo_cf_01\template.yaml
+
+5. Add an SSH access rule to the default security group.
+
+6. Connect to the EC2 instance through PuTTY.
+
+7. Change the EC2 instance name and detect drift.
+
+8. Change the EC2 instance name back and detect drift.
+
+9. Delete the stack.
+
+10. Create an EC2 instance and an S3 bucket through CloudFormation on the AWS console.
+- cloudformation-demo-main\demo_cf_02\template.yaml
+
+11. Update the stack so the EC2 instance is now named "Demo_Updated".
+- cloudformation-demo-main\demo_cf_03\template.yaml
+
+12. Delete the stack.
+
+13. Create an EC2 instance using parameters and explore Design View through CloudFormation on the AWS console.
+- cloudformation-demo-main\demo_cf_04\template.yaml
+
+14. Delete the stack.
+
+15. Create a Management EC2 instance through CloudFormation on the AWS console and connect to it through PuTTY.
+- cloudformation-demo-main\management\template.yaml
+
+16. Confirm AWS CLI access.
+- aws --version
+
+17. Configure AWS CLI and verify connectivity.
+- mkdir ~/.aws/ && vi ~/.aws/credentials
+[default]
+aws_access_key_id=<AK>
+aws_secret_access_key=<SK>
+aws_session_token=<T>
+region=us-east-1
+- aws cloudformation describe-stacks
+
+18. Clone the Git repository.
+- cd ~ && git clone https://github.com/kevinbayliss/cloudformation-demo && cd cloudformation-demo && ls
+
+19. Create an EC2 instance through CloudFormation on the AWS CLI.
+- aws cloudformation create-stack --stack-name Demo --tags Key=Name,Value=Demo --template-body file://demo_cf_01/template.yaml
+
+20. Describe the CloudFormation stack.
+- aws cloudformation describe-stacks
+
+21. Delete the stack.
+- aws cloudformation delete-stack --stack-name Demo
+
+22. Close PuTTY and delete the Management stack through CloudFormation on the AWS console.
+
+23. Remove the SSH access rule from the default security group.
+
+24. End Lab and logout of the AWS Academy Learner Lab.
